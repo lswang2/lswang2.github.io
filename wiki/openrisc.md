@@ -1,68 +1,102 @@
 OpenRISC related documents
 ==========================
 
-한글 사용 예제
 
-it's a full featured wiki powered by git, github pages and pull-requests!
+# RTL
 
-It means: 
+* OR1200 : old stable code. fixed pipelines, optional cache, mmu, fpu, mul/mac
+* mor1kx : new code. 3 implementation options (capucino, espresso, proto-espresso)
+* fuseSoC : verilog code fetch and build tool
 
-* Improvements in the cooperative aspect: forks, pull-requests and roles.
-* You can customize your wiki as you want with style sheets and even changing the layout.
-* No databases! Only static files that can be downloaded in a few seconds.
-* Markdown and html mixed together!
-* History, revision comparison and everything you need from a wiki platform.
-* You can edit your pages with the standard git editor, prose.io (integrated) or any kind of editor you prefer.
+# Tool chain
 
-You can fork/copy the master branch now and start your wiki in just 1 minute.
+1. newlib based tool chain : binutils + gcc + newlib
+* build binutils
+* build gcc first stage
+* build newlib
+* build gcc second stage
 
-Then [share your wiki with us!](wiki/Showreel.md) please.
+2. glibc based tool chain : binutils + gcc + glibc
+3. musl cross : binutils + gcc + musl
 
-**Note:**
-You can even include the github wiki as a submodule and enable the conf, but it's an experimental feature and it implies less advantages and greater disadvantages for now.
+## binutils-gdb
 
-## Installation instructions
+### compile
 
-1. Fork or copy [this repository](https://github.com/drassil/git-wiki)
+** need tools **
+* build-essential autoconf flex bison gperf libgmp-dev libmpfr-dev libmpc-dev zlib1g-dev texinfo guild-1.8
 
-2. copy and rename _config.yml.dist in _config.yml changing settings inside
+* get source
+> git clone git://github.com/lswang2/binutils-gdb
 
-3. create your index.md in root directory
+* prepare
+> mkdir build-binutils
+> cd build-binutils
 
-4. push your changes in your repository, then configure the github pages in your repository settings
+* configure
+> ../binutils-gdb/configure --target=or1k-elf --prefix=/usr/local/or1k --enable-shared --disable-itcl --disable-tk --disable-tcl --disable-winsup --disable-libgui --disable-rda --disable-sid --disable-sim --enable-gdb --with-sysroot --disable-newlib --disable-libgloss --disable-werror
+** note:**
+on 32-bit machines --disable-werror is needed due to an enum acting as bit mask is considered signed
 
-5. Your wiki is ready!
+* build
+> make
+> make install
 
-**Note:**
+## newlib
 
-We suggest the creation of a /wiki/ subfolder that collects all your .md pages (except index.md)
+* get source
+> git clone git://github.com/openrisc/newlib
 
-## Current known limitations
+* prepare
+> mkdir build-newlib
+> cd build-newlib
 
-* Non-existent wiki page links are not "[red](wiki/red.md)".
+* configure
+> ../newlib/configure --target=or1k-elf --prefix=/usr/local/or1k --enable-shared --disable-itcl --disable-tk --disable-tcl --disable-winsup --disable-libgui --disable-rda --disable-sid --enable-sim --disable-or1ksim --enable-gdb --with-sysroot --enable-newlib --enable-libgloss --disable-werror
 
-* You can't use the wiki link format: [[example]]. Please, use gh-pages links instead: \[example\](example) 
+* build
+> make
+> export PATH=$PATH:/usr/local/or1k/bin
+> make install
 
-## Customization
+## gcc
 
-You can create following files in _includes folder to costumize git-wiki without patching original code:
+* get source
+> git clone git://github.com/openrisc/or1k-gcc
 
-* head.html  -> this file will be included in <head> tag allowing you to add css/js and any kind of head tags
-* sidebar.html -> this file will be included in left sidebar allowing you to create your widgets
-* comments.html -> this is mostly used to integrate social comments under page contents
-* footer.html -> this file will be included in left side of the footer.
+### first stage
 
-## Looking for collaboration
+* prepare
+> mkdir build-gcc
+> cd build-gcc
 
-Do you like this project? then, contact us via [chat](https://gitter.im/Drassil/general?utm_source=share-link&utm_medium=link&utm_campaign=share-link) , <a href="mailto:staff-drassil@googlegroups.com">email</a>  or send us a PR to improve it.
+* configure
+> ../or1k-gcc/configure --target=or1k-elf --prefix=/usr/local/or1k --enable-languages=c --disable-shared --disable-libssp
 
-Thank you!
+* build
+> make
+> make install
 
-## Components used
+### second stage
 
-- [jekyll-table-of-contents](https://github.com/ghiculescu/jekyll-table-of-contents)
+* prepare
+> mkdir build-gcc2
+> cd build-gcc2
 
-- [jQuery](https://jquery.com/)
+* configure
+> ../or1k-gcc/configure --target=or1k-elf --prefix=/usr/local/or1k --enable-languages=c --disable-shared --disable-libssp --with-newlib
+
+* build
+> make
+> make install
+
+## musl cross
+
+Lightweight linux library.
+
+## glibc
+
+This is for full linux porting.
 
 
 [MIT LICENSE](LICENSE)
