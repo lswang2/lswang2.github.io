@@ -10,8 +10,8 @@ OpenRISC related documents
 
 # Tool chain
 
-* [build tool](wiki/openrisc_toolchain.md)
-* [assembler modification](wiki/openrisc_assembler.md)
+* [build tool](openrisc_toolchain.md)
+* [assembler modification](openrisc_assembler.md)
 
 
 [MIT LICENSE](LICENSE)
