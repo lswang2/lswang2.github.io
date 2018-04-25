@@ -28,7 +28,7 @@ OpenRISC related documents
 > $ git clone git://github.com/lswang2/binutils-gdb
 
 * prepare
-> $ mkdir build-binutils
+> $ mkdir build-binutils<br>
 > $ cd build-binutils
 
 * configure
@@ -37,7 +37,7 @@ OpenRISC related documents
 on 32-bit machines --disable-werror is needed due to an enum acting as bit mask is considered signed
 
 * build
-> $ make
+> $ make<br>
 > $ make install
 
 ## newlib
@@ -46,18 +46,15 @@ on 32-bit machines --disable-werror is needed due to an enum acting as bit mask 
 > $ git clone git://github.com/openrisc/newlib
 
 * prepare
-> $ mkdir build-newlib
-
+> $ mkdir build-newlib<br>
 > $ cd build-newlib
 
 * configure
 > $ ../newlib/configure --target=or1k-elf --prefix=/usr/local/or1k --enable-shared --disable-itcl --disable-tk --disable-tcl --disable-winsup --disable-libgui --disable-rda --disable-sid --enable-sim --disable-or1ksim --enable-gdb --with-sysroot --enable-newlib --enable-libgloss --disable-werror
 
 * build
-> $ make
-
-> $ export PATH=$PATH:/usr/local/or1k/bin
-
+> $ make<br>
+> $ export PATH=$PATH:/usr/local/or1k/bin<br>
 > $ make install
 
 ## gcc
@@ -68,31 +65,27 @@ on 32-bit machines --disable-werror is needed due to an enum acting as bit mask 
 ### first stage
 
 * prepare
-> $ mkdir build-gcc
-
+> $ mkdir build-gcc<br>
 > $ cd build-gcc
 
 * configure
 > $ ../or1k-gcc/configure --target=or1k-elf --prefix=/usr/local/or1k --enable-languages=c --disable-shared --disable-libssp
 
 * build
-> $ make
-
+> $ make<br>
 > $ make install
 
 ### second stage
 
 * prepare
-> $ mkdir build-gcc2
-
+> $ mkdir build-gcc2<br>
 > $ cd build-gcc2
 
 * configure
 > $ ../or1k-gcc/configure --target=or1k-elf --prefix=/usr/local/or1k --enable-languages=c --disable-shared --disable-libssp --with-newlib
 
 * build
-> $ make
-
+> $ make<br>
 > $ make install
 
 ## musl cross
