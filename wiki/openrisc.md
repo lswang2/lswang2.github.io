@@ -29,7 +29,6 @@ OpenRISC related documents
 
 * prepare
 > $ mkdir build-binutils
-
 > $ cd build-binutils
 
 * configure
@@ -39,7 +38,6 @@ on 32-bit machines --disable-werror is needed due to an enum acting as bit mask 
 
 * build
 > $ make
-
 > $ make install
 
 ## newlib
