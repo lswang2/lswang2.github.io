@@ -35,11 +35,12 @@
       }
       
       // Yehonal
-      if (!this.id) {
-        this.id = $(this).text().replace(/\W/g,'_'); 
+//      if (!this.id) {
+//        this.id = $(this).text().replace(/\W/g,'_'); 
+//      }
+      if(this.id){
+        return this.id;
       }
-      
-      return this.id;
     }), output = $(this);
     if (!headers.length || headers.length < settings.minimumHeaders || !output.length) {
       $(this).hide();
