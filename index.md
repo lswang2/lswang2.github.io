@@ -1,4 +1,4 @@
 # Welcome to lswang2 blog
 
-[sample](sample.md)
+[sample](wiki/sample.md)
 
