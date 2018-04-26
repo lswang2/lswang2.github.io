@@ -32,7 +32,10 @@ OpenRISC Tool chain
 
 **configure**
 
-    $ ../binutils-gdb/configure --target=or1k-elf --prefix=/usr/local/or1k --enable-shared --disable-itcl --disable-tk --disable-tcl --disable-winsup --disable-libgui --disable-rda --disable-sid --disable-sim --enable-gdb --with-sysroot --disable-newlib --disable-libgloss --disable-werror
+    $ ../binutils-gdb/configure --target=or1k-elf --prefix=/usr/local/or1k --enable-shared \
+    --disable-itcl --disable-tk --disable-tcl --disable-winsup --disable-libgui --disable-rda \
+    --disable-sid --disable-sim --enable-gdb --with-sysroot --disable-newlib --disable-libgloss \
+    --disable-werror
     
 **note:**
 on 32-bit machines --disable-werror is needed due to an enum acting as bit mask is considered signed
@@ -55,7 +58,9 @@ on 32-bit machines --disable-werror is needed due to an enum acting as bit mask 
 
 **configure**
 
-    $ ../newlib/configure --target=or1k-elf --prefix=/usr/local/or1k --enable-shared --disable-itcl --disable-tk --disable-tcl --disable-winsup --disable-libgui --disable-rda --disable-sid --enable-sim --disable-or1ksim --enable-gdb --with-sysroot --enable-newlib --enable-libgloss --disable-werror
+    $ ../newlib/configure --target=or1k-elf --prefix=/usr/local/or1k --enable-shared --disable-itcl \
+    --disable-tk --disable-tcl --disable-winsup --disable-libgui --disable-rda --disable-sid --enable-sim \
+    --disable-or1ksim --enable-gdb --with-sysroot --enable-newlib --enable-libgloss --disable-werror
 
 **build**
 
@@ -78,7 +83,8 @@ on 32-bit machines --disable-werror is needed due to an enum acting as bit mask 
 
 **configure**
 
-    $ ../or1k-gcc/configure --target=or1k-elf --prefix=/usr/local/or1k --enable-languages=c --disable-shared --disable-libssp
+    $ ../or1k-gcc/configure --target=or1k-elf --prefix=/usr/local/or1k --enable-languages=c \
+    --disable-shared --disable-libssp
 
 **build**
 
@@ -94,7 +100,8 @@ on 32-bit machines --disable-werror is needed due to an enum acting as bit mask 
 
 **configure**
 
-    $ ../or1k-gcc/configure --target=or1k-elf --prefix=/usr/local/or1k --enable-languages=c --disable-shared --disable-libssp --with-newlib
+    $ ../or1k-gcc/configure --target=or1k-elf --prefix=/usr/local/or1k --enable-languages=c \
+    --disable-shared --disable-libssp --with-newlib
 
 **build**
 
