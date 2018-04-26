@@ -21,43 +21,43 @@ OpenRISC Tool chain
 
     $ build-essential autoconf flex bison gperf libgmp-dev libmpfr-dev libmpc-dev zlib1g-dev texinfo guild-1.8
 
-* get source
+**get source**
 
     $ git clone git://github.com/lswang2/binutils-gdb
 
-* prepare
+**prepare**
 
     $ mkdir build-binutils
     $ cd build-binutils
 
-* configure
+**configure**
 
     $ ../binutils-gdb/configure --target=or1k-elf --prefix=/usr/local/or1k --enable-shared --disable-itcl --disable-tk --disable-tcl --disable-winsup --disable-libgui --disable-rda --disable-sid --disable-sim --enable-gdb --with-sysroot --disable-newlib --disable-libgloss --disable-werror
     
 **note:**
 on 32-bit machines --disable-werror is needed due to an enum acting as bit mask is considered signed
 
-* build
+**build**
 
     $ make
     $ make install
 
 # newlib
 
-* get source
+**get source**
 
     $ git clone git://github.com/openrisc/newlib
 
-* prepare
+**prepare**
 
     $ mkdir build-newlib
     $ cd build-newlib
 
-* configure
+**configure**
 
     $ ../newlib/configure --target=or1k-elf --prefix=/usr/local/or1k --enable-shared --disable-itcl --disable-tk --disable-tcl --disable-winsup --disable-libgui --disable-rda --disable-sid --enable-sim --disable-or1ksim --enable-gdb --with-sysroot --enable-newlib --enable-libgloss --disable-werror
 
-* build
+**build**
 
     $ make
     $ export PATH=$PATH:/usr/local/or1k/bin
@@ -65,38 +65,38 @@ on 32-bit machines --disable-werror is needed due to an enum acting as bit mask 
 
 # gcc
 
-* get source
+**get source**
 
     $ git clone git://github.com/openrisc/or1k-gcc
 
 ## first stage
 
-* prepare
+**prepare**
 
     $ mkdir build-gcc
     $ cd build-gcc
 
-* configure
+**configure**
 
     $ ../or1k-gcc/configure --target=or1k-elf --prefix=/usr/local/or1k --enable-languages=c --disable-shared --disable-libssp
 
-* build
+**build**
 
     $ make
     $ make install
 
 ## second stage
 
-* prepare
+**prepare**
 
     $ mkdir build-gcc2
     $ cd build-gcc2
 
-* configure
+**configure**
 
     $ ../or1k-gcc/configure --target=or1k-elf --prefix=/usr/local/or1k --enable-languages=c --disable-shared --disable-libssp --with-newlib
 
-* build
+**build**
 
     $ make
     $ make install
