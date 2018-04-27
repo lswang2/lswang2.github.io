@@ -4,6 +4,7 @@ OpenRISC Assembly Programming
 # Pure assembly programming
 
 **test_asm.S**
+
         .section    .text.startup,"ax",@progbits
         .align  4
     .proc   main
@@ -36,6 +37,7 @@ OpenRISC Assembly Programming
     or1k-elf-gcc -O2 -S asm.c
 
 **result <add.s>**
+
         .file   "add.c"
         .section .text
         .align  4
