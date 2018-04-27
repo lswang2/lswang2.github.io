@@ -11,7 +11,8 @@ OpenRISC related documents
 # Tool chain
 
 * [build tool](openrisc_toolchain.md)
-* [assembler modification](openrisc_assembler.md)
+* [assembler modification](openrisc_assembler_modification.md)
+* [assembly programming](openrisc_assembly_programming.md)
 
 # Simulation
 
