@@ -28,6 +28,7 @@ OpenRISC Assembly Programming
 ## function definition
 
 **First make <add.c> for test**
+
     int add(int a, int b)
     {
         return a+b;
