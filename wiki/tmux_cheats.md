@@ -41,7 +41,7 @@
 |prefix + #|List buffer|
 |prefix + ]|Pase buffer|
 
-mouse drag --> tmux buffer
-ctrl + mouse drag --> conventional copy
-ctrl + mouse center click --> conventional paste
+    mouse drag --> tmux buffer
+    ctrl + mouse drag --> conventional copy
+    ctrl + mouse center click --> conventional paste
 
