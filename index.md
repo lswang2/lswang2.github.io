@@ -5,5 +5,7 @@ Welcome to lswang2 blog
 
 [tmux](wiki/tmux_cheats.md)
 
+[git](wiki/git_cheats.md)
+
 [sample](wiki/sample.md)
 
