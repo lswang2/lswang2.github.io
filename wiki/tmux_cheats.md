@@ -1,14 +1,16 @@
-# Execution
+# tmux
+
+## Execution
     > tmux
 
-# Prefix change
+## Prefix change
     : set-option -g prefix C-a
     
-# mouse on
+## mouse on
     : set -g mouse on
     : set -g history-limit 100000
 
-# basic
+## basic
 |key|description|
 |:-:|---|
 |prefix + c|Create new window|
@@ -22,7 +24,7 @@
 |prefix + w|Choose tree|
 
 
-# pane
+## pane
 |key|description|
 |:-:|---|
 |prefix + %/v|Split window in vertical|
@@ -34,7 +36,7 @@
 |prefix + Q|Enter key to all panes|
 
 
-# misc
+## misc
 |key|description|
 |:-:|---|
 |prefix + :|Command prompt|
