@@ -51,3 +51,72 @@
     ctrl + mouse drag --> conventional copy
     ctrl + mouse center click --> conventional paste
 
+## current .tmux.conf file
+
+~~~~
+set-option -g prefix C-a
+
+bind-key C-a last-window
+# Set status bar
+set -g status-bg black
+set -g status-fg white
+set -g status-left '#[fg=green]#H'
+
+# Highlight active window
+set-window-option -g window-status-current-bg red
+
+#set -g status-right '#[fg=yellow]#(uptime | cut -d "," -f 2-)'
+set -g status-right '#[fg=yellow]#(date)'
+
+
+
+bind h select-pane -L
+bind j select-pane -D
+bind k select-pane -U
+bind l select-pane -R
+
+set -g default-terminal "xterm-256color"
+
+# set window split
+bind-key v split-window -h
+bind-key b split-window
+
+# title
+bind-key A command-prompt "rename-window %%"
+
+# default window title colors
+set-window-option -g window-status-fg colour244 #base0
+set-window-option -g window-status-bg default
+#set-window-option -g window-status-attr dim
+
+# active window title colors
+set-window-option -g window-status-current-fg colour166 #orange
+set-window-option -g window-status-current-bg default
+#set-window-option -g window-status-current-attr bright
+
+# pane border
+set-option -g pane-border-fg colour235 #base02
+set-option -g pane-active-border-fg colour240 #base01
+
+# message text
+set-option -g message-bg colour235 #base02
+set-option -g message-fg colour166 #orange
+
+# Start numbering at 1
+set -g base-index 1
+
+# reload config
+bind r source-file ~/.tmux.conf \; display-message "Config reloaded..."                                                                     
+
+#bind-key Space next-layout
+bind-key Space next-window
+
+#bind-key w list-buffers
+
+#mouse
+set -g mouse on
+set -g history-limit 100000
+
+#synchronized pane input mode
+bind Q setw synchronize-panes
+~~~~
