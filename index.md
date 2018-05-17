@@ -7,5 +7,7 @@ Welcome to lswang2 blog
 
 [git](wiki/git_cheats.md)
 
+[linux](wiki/linux_cheats.md)
+
 [sample](wiki/sample.md)
 
