@@ -98,6 +98,90 @@ end
 endmodule
 ~~~~
 
+~~~~ scheme
+(df f-disp21
+    "disp21"
+    ((MACH ORBIS-MACHS) ABS-ADDR)
+    20
+    21
+    INT
+    ((value pc)
+     (sub IAI (sra IAI value (const 13)) (sra IAI pc (const 13))))
+    ((value pc)
+     (sll IAI (add IAI value (sra IAI pc (const 13))) (const 13)))
+    )
+~~~~
+
+~~~~ perl
+#!/usr/local/bin/perl -w
+
+use Getopt::Long;
+use POSIX;
+
+GetOptions(
+    "help|h|?"          => \$opt{"help"},
+    "address|a=s"       => \$opt{"addr"},
+    "destination|d=s"   => \$opt{"dst"},
+    "shift|s=s"         => \$opt{"shift"}
+    );
+
+if( defined $opt{"help"} || !defined $opt{"dst"} || !defined $opt{"addr"}){
+    print <<END_OF_HELP;
+Usage: wav2srec.pl -a start_address [-s shift] -d srecfile.srec wavfile1.wav [wavfile2.wav [...]]
+       default shift : 2
+END_OF_HELP
+    exit(1);
+}
+~~~~
+
+~~~~ csh
+if ($uver =~ *el5*) then
+    set centos_ver = '5'
+else if ($uver =~ *el6*) then
+    set centos_ver = '6'
+else if ($uver =~ *el7*) then
+    set centos_ver = '7'
+else
+    set centos_ver = '0'
+endif
+~~~~
+
+~~~~ bash
+# If not running interactively, don't do anything
+case $- in
+    *i*) ;;
+      *) return;;
+esac
+
+# don't put duplicate lines or lines starting with space in the history.
+# See bash(1) for more options
+HISTCONTROL=ignoreboth
+~~~~
+
+~~~~ kotlin
+    @Throws(HidException::class)
+    fun write(data: ByteArray, size: Int = packetSize) {
+        val status = connection!!.bulkTransfer(endPointWrite, data, size, write_timeout)
+        if (status < 0)
+            throw HidException()
+    }
+~~~~
+
+~~~~ java
+    @Override
+    protected void onStart(){
+        super.onStart();
+        Log.v("wang", "Sensor_Start");
+        hidSetup();
+    }
+    @Override
+    protected void onPause(){
+        super.onPause();
+        Log.v("wang", "Sensor_Pause");
+    }
+~~~~
+
+
 
 ## Components used
 
