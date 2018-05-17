@@ -12,16 +12,16 @@
 
 ## basic
 
-| key | description |
+|key|description|
 |:---:|:------------|
-| prefix + c | Create new window |
-| prefix + n | Right window |
-| prefix + SPACE | Right window |
-| prefix + p | Left window |
-| prefix + C-a | Previous window |
-| prefix + 0~9 | Select window |
-| prefix + d | Detach client |
-| prefix + s | Choose tree |
+|prefix + c|Create new window|
+|prefix + n|Right window|
+|prefix + SPACE|Right window|
+|prefix + p|Left window|
+|prefix + C-a|Previous window|
+|prefix + 0~9|Select window|
+|prefix + d|Detach client|
+|prefix + s|Choose tree|
 
 
 ## pane
