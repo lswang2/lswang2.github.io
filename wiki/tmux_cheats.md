@@ -12,7 +12,7 @@
 
 ## basic
 | key | description |
-| :---: | --- |
+|:---:|:------------|
 | prefix + c | Create new window |
 | prefix + n | Right window |
 | prefix + SPACE | Right window |
@@ -22,11 +22,12 @@
 | prefix + d | Detach client |
 | prefix + s | Choose tree |
 | prefix + w | Choose tree |
+|==========
 
 
 ## pane
 |key|description|
-|:-:|---|
+|:-:|:---|
 |prefix + %/v|Split window in vertical|
 |prefix + "/b|Split window in horizontal|
 |prefix + h/j/k/l|Move to pane|
@@ -34,6 +35,7 @@
 |prefix + q|Display panes|
 |prefix + {/}|Swap pane|
 |prefix + Q|Enter key to all panes|
+|===========
 
 
 ## misc
@@ -42,6 +44,7 @@
 |prefix + :|Command prompt|
 |prefix + #|List buffer|
 |prefix + ]|Pase buffer|
+|============
 
     mouse drag --> tmux buffer
     ctrl + mouse drag --> conventional copy
