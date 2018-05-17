@@ -27,7 +27,7 @@
 ## pane
 
 |key|description|
-|:-:|:---|
+|:---:|:------------|
 |prefix + %/v|Split window in vertical|
 |prefix + "/b|Split window in horizontal|
 |prefix + h/j/k/l|Move to pane|
@@ -41,7 +41,7 @@
 ## misc
 
 |key|description|
-|:-:|---|
+|:---:|:------------|
 |prefix + :|Command prompt|
 |prefix + #|List buffer|
 |prefix + ]|Pase buffer|
