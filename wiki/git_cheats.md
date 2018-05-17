@@ -16,6 +16,22 @@
     > git commit -a -m "log message"
     > git push
     
+## branch & merge
+    # branch만들기
+    > git checkout -b new_branch_name
+    
+    # edit files
+    
+    # merge
+    > git commit -a -m "branch checkin"
+    > git pull
+    > git checkout master
+    > git merge new_branch_name
+    
+    # edit conflicts
+    > git commit -a -m "merging message"
+    > git push
+    
 ## 서버 변경하기
     # 현재 서버 정보
     > git remote -v
