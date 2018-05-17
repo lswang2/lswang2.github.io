@@ -9,5 +9,5 @@ Welcome to lswang2 blog
 
 [linux](wiki/linux_cheats.md)
 
-[sample](wiki/sample.md)
+[comment]: [sample](wiki/sample.md)
 
