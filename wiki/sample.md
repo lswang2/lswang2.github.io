@@ -57,6 +57,8 @@ Do you like this project? then, contact us via [chat](https://gitter.im/Drassil/
 
 Thank you!
 
+## table
+
 | 헤더1 | 헤더2 | 헤더3 |
 |:--------|:-------:|--------:|
 | 컬럼1   | 컬럼2   | 컬럼3   |
@@ -66,6 +68,36 @@ Thank you!
 | 컬럼4   | 컬럼5   | 컬럼6   |
 |=====
 | Foot1   | Foot2   | Foot3
+
+## code block
+
+~~~~ c
+#include <stdio.h>
+
+int main(void)
+{
+    printf("Hello word!\n");
+    return 1;
+}
+~~~~
+
+~~~~ python
+s = 'Hello word'
+print(s)
+~~~~
+
+~~~~ verilog
+module test;
+
+initial
+begin
+    $display("Hello world");
+    $finish;
+end
+
+endmodule
+~~~~
+
 
 ## Components used
 
