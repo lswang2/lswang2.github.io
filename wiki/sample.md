@@ -57,6 +57,16 @@ Do you like this project? then, contact us via [chat](https://gitter.im/Drassil/
 
 Thank you!
 
+| 헤더1 | 헤더2 | 헤더3 |
+|:--------|:-------:|--------:|
+| 컬럼1   | 컬럼2   | 컬럼3   |
+| 컬럼4   | 컬럼5   | 컬럼6   |
+|----
+| 컬럼1   | 컬럼2   | 컬럼3   |
+| 컬럼4   | 컬럼5   | 컬럼6   |
+|=====
+| Foot1   | Foot2   | Foot3
+
 ## Components used
 
 - [jekyll-table-of-contents](https://github.com/ghiculescu/jekyll-table-of-contents)
