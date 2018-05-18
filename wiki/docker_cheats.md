@@ -13,6 +13,9 @@ docker run [--rm] [-it] -v [local_path:container_path] docker_image [command]
 # --rm : 실행이 끝난 후 container를 지움
 # -it : terminal mode로 실행
 # -v : 바깥 폴더를 container에 제공된 폴더로 마운트함
+
+# 여려 명령어를 실행하는 방법
+docker run --rm -it docker_image /bin/bash -c "(cd blah;execute command; execute other command)"
 ~~~~
 
 ## 유용한 명령
