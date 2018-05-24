@@ -57,6 +57,128 @@ Do you like this project? then, contact us via [chat](https://gitter.im/Drassil/
 
 Thank you!
 
+## headers
+~~~~
+# H1
+
+## H2
+
+### H3
+
+#### H4
+
+##### H5
+
+H1
+====
+
+H2
+----
+~~~~
+
+# H1
+
+## H2
+
+### H3
+
+#### H4
+
+##### H5
+
+H1
+====
+
+H2
+----
+
+## numbering
+
+1. hello
+
+2. world
+
+1. foo
+   * sub bullet
+1. bar
+* hello
+- world
++ foo
+- bar
+
+## links
+
+~~~~
+[I'm an inline-style link](https://www.google.com)
+
+[I'm an inline-style link with title](https://www.google.com "Google's Homepage")
+
+[I'm a reference-style link][Arbitrary case-insensitive reference text]
+
+[I'm a relative reference to a repository file](../blob/master/LICENSE)
+
+[You can use numbers for reference-style link definitions][1]
+
+Or leave it empty and use the [link text itself].
+
+URLs and URLs in angle brackets will automatically get turned into links. 
+http://www.example.com or <http://www.example.com> and sometimes 
+example.com (but not on Github, for example).
+
+Some text to show that the reference links can follow later.
+
+[arbitrary case-insensitive reference text]: https://www.mozilla.org
+[1]: http://slashdot.org
+[link text itself]: http://www.reddit.com
+~~~~
+
+[I'm an inline-style link](https://www.google.com)
+
+[I'm an inline-style link with title](https://www.google.com "Google's Homepage")
+
+[I'm a reference-style link][Arbitrary case-insensitive reference text]
+
+[I'm a relative reference to a repository file](../blob/master/LICENSE)
+
+[You can use numbers for reference-style link definitions][1]
+
+Or leave it empty and use the [link text itself].
+
+URLs and URLs in angle brackets will automatically get turned into links. 
+http://www.example.com or <http://www.example.com> and sometimes 
+example.com (but not on Github, for example).
+
+Some text to show that the reference links can follow later.
+
+[arbitrary case-insensitive reference text]: https://www.mozilla.org
+[1]: http://slashdot.org
+[link text itself]: http://www.reddit.com
+
+
+## images
+
+~~~~
+Here's our logo (hover to see the title text):
+
+Inline-style: 
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+
+Reference-style: 
+![alt text][logo]
+
+[logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 2"
+~~~~
+
+Here's our logo (hover to see the title text):
+
+Inline-style: 
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+
+Reference-style: 
+![alt text][logo]
+
+[logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 2"
+
 ## table
 
 | 헤더1 | 헤더2 | 헤더3 |
@@ -67,9 +189,86 @@ Thank you!
 | 컬럼1   | 컬럼2   | 컬럼3   |
 | 컬럼4   | 컬럼5   | 컬럼6   |
 |=====
-| Foot1   | Foot2   | Foot3
+| Foot1   | Foot2   | Foot3 |
+
+~~~~
+|             |          Grouping           ||
+|First Header | Second Header | Third Header |
+|------------ | :-----------: | -----------: |
+|Content      |          *Long Cell*        ||
+|Content      |   **Cell**    |         Cell |
+|New section  |     More      |         Data |
+|And more     | With an escaped '\|'        ||  
+[Prototype table]
+~~~~
+
+|             |          Grouping           ||
+
+|First Header | Second Header | Third Header |
+|------------ | :-----------: | -----------: |
+|Content      |          *Long Cell*        ||
+|Content      |   **Cell**    |         Cell |
+|New section  |     More      |         Data |
+|And more     | With an escaped '\|'        ||  
+[Prototype table]
+
+|             |          Grouping           ||
+|First Header | Second Header | Third Header |
+|------------ | :-----------: | -----------: |
+|Content      |          *Long Cell*        ||
+|Content      |   **Cell**    |         Cell |
+|New section  |     More      |         Data |
+|And more     | With an escaped '\|'        ||  
+[Prototype table]
+
+
+## line break
+
+some
+
+`***`
+***
+
+foo
+
+`___`
+___
+
+bar
+
+`---`
+---
+
 
 ## code block
+
+~~~~
+Inline `code` has `back-ticks around` it.
+~~~~
+Inline `code` has `back-ticks around` it.
+
+~~~~
+```` c
+#include <stdio.h>
+
+int main(void)
+{
+    printf("Hello word!\n");
+    return 1;
+}
+````
+~~~~
+````
+~~~~ c
+#include <stdio.h>
+
+int main(void)
+{
+    printf("Hello word!\n");
+    return 1;
+}
+~~~~
+````
 
 ~~~~ c
 #include <stdio.h>
