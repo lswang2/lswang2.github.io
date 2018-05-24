@@ -27,6 +27,7 @@
 |preifx + s|Choose window|
 
 * User defined
+
 |key|description|
 |:---:|:------------|
 |preifx + C-h|Select left window (can be repeated)|
