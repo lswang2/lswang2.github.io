@@ -24,7 +24,6 @@
 |prefix + s|Choose tree|
 |prefix + '|Choose window by index|
 |prefix + w|Choose window|
-|preifx + s|Choose window|
 
 * User defined
 
