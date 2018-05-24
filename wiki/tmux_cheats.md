@@ -25,6 +25,9 @@
 |prefix + '|Choose window by index|
 |prefix + w|Choose window|
 |preifx + s|Choose window|
+
+* User defined
+|key|description|
 |:---:|:------------|
 |preifx + C-h|Select left window (can be repeated)|
 |preifx + C-l|Select right window (can be repeated)|
