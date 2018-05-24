@@ -22,7 +22,12 @@
 |prefix + 0~9|Select window|
 |prefix + d|Detach client|
 |prefix + s|Choose tree|
-
+|prefix + '|Choose window by index|
+|prefix + w|Choose window|
+|preifx + s|Choose window|
+|:---:|:------------|
+|preifx + C-h|Select left window (can be repeated)|
+|preifx + C-l|Select right window (can be repeated)|
 
 ## pane
 
@@ -110,6 +115,10 @@ bind r source-file ~/.tmux.conf \; display-message "Config reloaded..."
 
 #bind-key Space next-layout
 bind-key Space next-window
+
+#bind for windows change without C-a except the first one
+bind -r C-h select-window -t :-
+bind -r C-l select-window -t :+
 
 #bind-key w list-buffers
 
