@@ -24,6 +24,7 @@
 |prefix + s|Choose tree|
 |prefix + '|Choose window by index|
 |prefix + w|Choose window|
+|prefix + r|Reload .tmux.conf file|
 
 * User defined
 
@@ -31,6 +32,7 @@
 |:---:|:------------|
 |preifx + C-h|Select left window (can be repeated)|
 |preifx + C-l|Select right window (can be repeated)|
+|preifx + e|Edit current .tmux.conf file|
 
 ## pane
 
@@ -53,6 +55,7 @@
 |prefix + :|Command prompt|
 |prefix + #|List buffer|
 |prefix + ]|Pase buffer|
+|prefix + t|Show time|
 
 
     mouse drag --> tmux buffer
@@ -115,6 +118,7 @@ set -g base-index 1
 
 # reload config
 bind r source-file ~/.tmux.conf \; display-message "Config reloaded..."                                                                     
+bind e send-keys -t : vi Space ~/.tmux.conf Enter
 
 #bind-key Space next-layout
 bind-key Space next-window
