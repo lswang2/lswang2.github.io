@@ -30,9 +30,9 @@
 
 |key|description|
 |:---:|:------------|
-|preifx + C-h|Select left window (can be repeated)|
-|preifx + C-l|Select right window (can be repeated)|
-|preifx + e|Edit current .tmux.conf file|
+|prefix + C-h|Select left window (can be repeated)|
+|prefix + C-l|Select right window (can be repeated)|
+|prefix + e|Edit current .tmux.conf file|
 
 ## pane
 
