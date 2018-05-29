@@ -1,14 +1,20 @@
 # tmux
 
 ## Execution
-    > tmux
+~~~~
+> tmux
+~~~~
 
 ## Prefix change
-    : set-option -g prefix C-a
+~~~~~
+: set-option -g prefix C-a
+~~~~~
     
 ## mouse on
-    : set -g mouse on
-    : set -g history-limit 100000
+~~~~
+: set -g mouse on
+: set -g history-limit 100000
+~~~~
 
 ## basic
 
@@ -46,6 +52,33 @@
 |prefix + {/}|Swap pane|
 |prefix + Q|Enter key to all panes|
 
+### resize-pane
+
+All operations are executed for right, under pane boundaries except the last pane.
+
+~~~~
+:resize-pane -U [N]
+~~~~
+if lowest pane, move upper boundary of current pane 1 or N upward.
+if not lowest pane, move lower boundary of current pane 1 or N upward.
+
+~~~~
+:resize-pane -D [N]
+~~~~
+if lowest pane, move upper boundary of current pane 1 or N downward.
+if not lowest pane, move lower boundary of current pane 1 or N downward.
+
+~~~~
+:resize-pane -L [N]
+~~~~
+if rightest pane, move left boundary of current pane 1 or N leftward.
+if not rightest pane, move right boundary of current pane 1 or N leftward.
+
+~~~~
+:resize-pane -R [N]
+~~~~
+if rightest pane, move left boundary of current pane 1 or N rightward.
+if not rightest pane, move right boundary of current pane 1 or N rightward.
 
 
 ## misc
@@ -57,10 +90,11 @@
 |prefix + ]|Pase buffer|
 |prefix + t|Show time|
 
-
-    mouse drag --> tmux buffer
-    ctrl + mouse drag --> conventional copy
-    ctrl + mouse center click --> conventional paste
+~~~~
+mouse drag --> tmux buffer
+ctrl + mouse drag --> conventional copy
+ctrl + mouse center click --> conventional paste
+~~~~
 
 ## current .tmux.conf file
 
