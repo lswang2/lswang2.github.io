@@ -67,4 +67,12 @@ git> git init --bare
 # 새 서버에 업로드
 > git push server_name master
 ~~~~
-    
+
+## 기타 팁
+~~~~
+# 모든 파일 리스트
+> git ls-files
+
+# GUI로 diff 보기
+> gitk &
+~~~~
