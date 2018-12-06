@@ -28,13 +28,16 @@ git> git init --bare
 ## 업로드
 ~~~~
 > git commit -a -m "log message"
-> git push
+> git push       # push mater branch only
+> git push --all # push all branches
 ~~~~
 
 ## branch & merge
 ~~~~
 # branch만들기
 > git checkout -b new_branch_name
+또는
+> git branch new_branch_name # 현재 버전을 branch로 고정해 둠
 
 # edit files
 
