@@ -25,6 +25,7 @@ docker run --rm -it docker_image /bin/bash -c "(cd blah;execute command; execute
 docker images
 # 이미지 지우기
 docker rmi image_id
+
 # 실행중인 컨테이너
 docker ps
 # 모든 컨테이너 보기
@@ -33,6 +34,11 @@ docker ps -a
 docker kill container
 # 컨테이너 삭제
 docker rm container
+
+# 이미지 저장
+docker save -o image_filename
+# 이미지 로딩
+docker load -i image_filename
 ~~~~
 
 ## 새 이미지 만들기
@@ -60,6 +66,9 @@ WORKDIR        /usr/local
 #내부 환경변수 선언
 ENV            VERSION=1.3.1
 ENV            FILE=or1k_tool_chain_wang_bionic_v${VERSION}.txz
+
+#새 패스 설정
+ENV            PATH="/new/path:${PATH}"
 
 # 바깥의 파일을 내부로 복사
 COPY       ${FILE} .
