@@ -36,7 +36,7 @@ docker kill container
 docker rm container
 
 # 이미지 저장
-docker save -o image_filename
+docker save image_id -o image_filename
 # 이미지 로딩
 docker load -i image_filename
 ~~~~
