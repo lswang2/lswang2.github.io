@@ -34,6 +34,28 @@ download [latest]:ftp://sourceware.org/pub/cgen/snapshots/latest.tar.bz2 snapsho
 
 ## macro definition
 
+# cgen build flow
+- download binutils from https://github.com/openrisc/binutils_gdb
+- download cgen from ftp://sourceware.org/pub/cgen/snapshots/
+- uncompress cgen
+- edit binutils_gdb/cpu/or1korbis.cpu for new instructions
+
+~~~~
+copy -r ./cgen-date/cgen ./binutils_gdb/
+mkdir build
+cd build
+
+../binutils_gdb/configure
+make -j4
+
+cd opcodes
+
+make stamp-or1k
+
+cd ../../binutils-gdb/opcodes
+ls or1k-*
+~~~~
+
 
 # new instructions
 
