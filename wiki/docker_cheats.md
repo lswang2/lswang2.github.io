@@ -90,5 +90,16 @@ RUN         echo "export PATH=$PATH:/usr/local/or1k/bin" >> /home/usb/.bashrc
 ENTRYPOINT ["/bin/bash"]
 ~~~~
 
+## hub.docker.com
 
+~~~~
+# 도커 허브에 로그인
+docker login -u "username" -p "password" docker.io
+
+# 도커 허브에 생성된 image를 업로드
+docker push username/progject:tag
+
+# 도커 허브에 태그만 바꾸어서 새로 업로드
+docker tag username/project:old_tag username/project:new_tag
+docker push username/project:new_tag
 
