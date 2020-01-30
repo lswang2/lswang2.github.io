@@ -51,6 +51,12 @@ on 32-bit machines --disable-werror is needed due to an enum acting as bit mask 
 
     $ git clone git://github.com/openrisc/newlib
 
+**BSP modification**
+
+    board에 맞추어 BSP를 적용하려면
+    libgloss/or1k/boards/new_bsp.S 파일을 생성하고
+    libgloss/or1k/Makefile.in 에서 BOARDS를 새 파일만 지정도록 수정한다
+
 **prepare**
 
     $ mkdir build-newlib
