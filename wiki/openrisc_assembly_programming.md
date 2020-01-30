@@ -27,17 +27,20 @@ OpenRISC Assembly Programming
 
 ## function definition
 
-**First make <add.c> for test**
-
+**First make "add.c" for test**
+~~~~
     int add(int a, int b)
     {
         return a+b;
     }
+~~~~
 
 **make assembly code**
+~~~~
     or1k-elf-gcc -O2 -S asm.c
+~~~~
 
-**result <add.s>**
+**result "add.s"**
 
         .file   "add.c"
         .section .text
