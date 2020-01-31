@@ -74,7 +74,23 @@ OpenRISC Assembly Programming
         .size   add, .-add
         .ident  "GCC: (GNU) 5.3.0"
 
+## inline assembly
 
+**=r (target register), r (source register), n (number)**
+~~~~
+uint32_t check_flag(void)
+{
+    uint32_t flag;
+    __asm__ __volatile__("l.mfspr\t\t%0,%1,0": "=r"(flag):"r"(0x0011));
+    if(f!=((flag>>9)&0x01))
+        return 0;
+    else
+        return 1;
+}
+~~~~
+~~~~
+__asm__ __volatile__("ld.mul\t\t%0,%1 %2,%3 %4":"=r"(d_inst):"r"(a),"n"(1),"r"(b),"n"(1));
+~~~~
 
 
 
