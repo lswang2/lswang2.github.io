@@ -89,6 +89,9 @@ uint32_t check_flag(void)
 }
 ~~~~
 ~~~~
+__asm__ __volatile__("l.mtspr\t\t%0,%1,0": :"r"(0x001E), "r"(a));
+~~~~
+~~~~
 __asm__ __volatile__("ld.mul\t\t%0,%1 %2,%3 %4":"=r"(d_inst):"r"(a),"n"(1),"r"(b),"n"(1));
 ~~~~
 
