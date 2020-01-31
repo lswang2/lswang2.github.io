@@ -82,6 +82,7 @@ uint32_t check_flag(void)
 {
     uint32_t flag;
     __asm__ __volatile__("l.mfspr\t\t%0,%1,0": "=r"(flag):"r"(0x0011));
+    // l.mfspr   r4, 0x0011
     if(f!=((flag>>9)&0x01))
         return 0;
     else
@@ -91,10 +92,12 @@ uint32_t check_flag(void)
 **no target register**
 ~~~~
 __asm__ __volatile__("l.mtspr\t\t%0,%1,0": :"r"(0x001E), "r"(a));
+// l.mtspr  0x0011, r4
 ~~~~
 **constant numbers as arguments**
 ~~~~
-__asm__ __volatile__("ld.mul\t\t%0,%1 %2,%3 %4":"=r"(d_inst):"r"(a),"n"(1),"r"(b),"n"(1));
+__asm__ __volatile__("l.inst\t\t%0,%1 %2,%3 %4":"=r"(d_inst):"r"(a),"n"(1),"r"(b),"n"(1));
+// l.inst r4, r1 0, r2 1
 ~~~~
 
 
