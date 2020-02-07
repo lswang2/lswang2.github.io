@@ -13,6 +13,7 @@ OpenRISC related documents
 * [build tool](openrisc_toolchain.md)
 * [assembler modification](openrisc_assembler_modification.md)
 * [assembly programming](openrisc_assembly_programming.md)
+* [bsp programming](openrisc_bsp.md)
 
 # Simulation
 
