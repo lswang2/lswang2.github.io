@@ -78,4 +78,7 @@ git> git init --bare
 
 # GUI로 diff 보기
 > gitk &
+
+# 현재 커밋되지 않은 모든 수정 되돌리기 
+> git checkout .
 ~~~~
