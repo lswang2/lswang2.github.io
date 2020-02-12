@@ -73,6 +73,11 @@ git> git init --bare
 
 ## 롤백
 ~~~~
+# 로그 확인하기
+# commit_key는 긴 것이나 7자리의 짧은 것을 사용해도 된다.
+> git log  # full log print
+> git log --oneline -N  # 한줄 씩 최근 N개 출력
+
 # 현재 커밋되지 않은 수정 되돌리기 
 > git checkout .  # 모든 수정
 > git checkout folder # 해당 폴더 내부 전부
