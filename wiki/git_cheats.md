@@ -71,6 +71,24 @@ git> git init --bare
 > git push server_name master
 ~~~~
 
+## 롤백
+~~~~
+# 현재 커밋되지 않은 수정 되돌리기 
+> git checkout .  # 모든 수정
+> git checkout folder # 해당 폴더 내부 전부
+> git checkout -- file # 해당 파일만
+
+# revert
+# 해당 버전 이후의 commit을 유지함
+> git revert <commit_key>  # 해당 commit을 HEAD commit으로 바꿈, working directory 유지
+
+# reset
+# 해당 버전 이후의 모든 commit을 지워버림
+> git reset --soft <commit_key>  # git repository에서 HEAD를 해당 버전으로 되돌림
+> git reset [--mixed] <commit_key> # # repository + index(add한 상태)도 바꿈
+> git reset --hard <commit_key> # 위에 덧붙여 working directory의 내용도 해당 버전으로 모두 되돌림
+~~~~
+
 ## 기타 팁
 ~~~~
 # 모든 파일 리스트
@@ -78,7 +96,4 @@ git> git init --bare
 
 # GUI로 diff 보기
 > gitk &
-
-# 현재 커밋되지 않은 모든 수정 되돌리기 
-> git checkout .
 ~~~~
