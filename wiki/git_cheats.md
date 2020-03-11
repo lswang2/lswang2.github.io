@@ -101,4 +101,8 @@ git> git init --bare
 
 # GUI로 diff 보기
 > gitk &
+
+# 바로 직전 commit의 로그 수정
+> git commit --amend
+
 ~~~~
