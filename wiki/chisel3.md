@@ -47,18 +47,53 @@ class my_module extends BlackBox{
 
 ## signal
 
+register
+~~~~
+val regname = Reg(UInt(1.W)) // 1bit register
+val regname = Reg(UInt(8.W)) // 8bit register
+val regname = Reg(Bool())    // boolean(=~ 1bit) register
+val regname = RegInit(0.U(8.W)) // 8bit register with sync reset
+
+regname := othersignal   // latch othersignal data into regname F/F
+when(enable){
+  regname : othersignal   // latch othersignal data into regname F/F if enable is true
+}
+~~~~
+
+wire
+~~~~
+val wirename = Wire(UInt(1.W)) // 1bit wire
+val wirename = Wire(UInt(8.W)) // 8bit wire
+
+wirename := othersignal   // assign othersignal into wirename net
+
+val wirename = othersignal  // define wirename implicitly and assign othersignal into it
+~~~~
 
 
 
 
 ## statements
+when statements
+~~~~
+when(condition0){
+  statement when condition 0
+}.elsewhen(condition1){
+  statement when condition 1
+}.elsewhen(condition2){
+  statement when condition 2
+}.othersize{
+  statement deffault
+}
+~~~~
 
 
 
 
+## vec/seq
 
-## vec/array/seq
-
+val vecname = Reg(Vec(size, UInt(8.W))) // 8bit x size data register
+val seqname = for(i <- 0 until 8) yield { Reg(UInt(32.W) } // 32bit x 8 register generation
 
 
 
