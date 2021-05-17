@@ -102,6 +102,26 @@ val reduced = vecname.reduce(_|_)
 val wirename = vecname.asUInt
 ~~~~
 
+## Bundle
+~~~~
+class MyBundle extends Bundle{
+  val a = UInt(1.W)
+  val b = UInt(3.W)
+  val c = Uint(4.W)
+}
+....
+// pack
+val bun = Wire(new MyBundle)
+...
+val uint = bun.asUInt
+
+// unpack
+val bun_new = uint.asTypeOf(new MyBundle)
+... := bun_new.a
+... := bun_new.b
+... := bun_new.c
+~~~~
+
 
 
 ## for/foreach/map
