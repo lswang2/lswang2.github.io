@@ -52,7 +52,7 @@ register
 val regname = Reg(UInt(1.W)) // 1bit register
 val regname = Reg(UInt(8.W)) // 8bit register
 val regname = Reg(Bool())    // boolean(=~ 1bit) register
-val regname = RegInit(0.U(8.W)) // 8bit register with sync reset
+val regname = RegInit(0.U(8.W)) // 8bit register with reset
 
 regname := othersignal   // latch othersignal data into regname F/F
 when(enable){
@@ -91,9 +91,16 @@ when(condition0){
 
 
 ## vec/seq
-
+data
+~~~~
 val vecname = Reg(Vec(size, UInt(8.W))) // 8bit x size data register
 val seqname = for(i <- 0 until 8) yield { Reg(UInt(32.W) } // 32bit x 8 register generation
+~~~~
+operations
+~~~~
+val reduced = vecname.reduce(_|_)
+val wirename = vecname.asUInt
+~~~~
 
 
 
