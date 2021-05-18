@@ -96,7 +96,21 @@ switch(value){
   // NO default statement
 }
 ~~~~
-
+state machine example
+~~~~
+val state_0 :: state_1 :: state_3 :: Nil = Enum(3)
+val state = RegInit(state_0)
+switch(state){
+  is(state_0){
+    state := nextstate
+    ...
+  }
+  is(state_1){
+    state := nextstate
+    ...
+  }
+}
+~~~~
 
 
 ## vec/seq
