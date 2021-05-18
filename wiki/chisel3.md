@@ -86,7 +86,16 @@ when(condition0){
   statement deffault
 }
 ~~~~
-
+switch-is statements
+~~~~
+switch(value){
+  is(valueA){
+  }
+  is(valueB){
+  }
+  // NO default statement
+}
+~~~~
 
 
 
