@@ -11,6 +11,8 @@ Welcome to lswang2 blog
 
 [docker](wiki/docker_cheats.md)
 
+[chisel3](wiki/chisel3.md)
+
 [comment]: [sample](wiki/sample.md)
 
-[chisel3]: [sample](wiki/chisel3.md)
+
