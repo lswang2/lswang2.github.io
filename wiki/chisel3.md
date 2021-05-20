@@ -3,7 +3,7 @@
 
 ## module & port
 making new module in Chisel3
-~~~~
+~~~~verilog
 module  my_module(
   input clock,
   input reset,
@@ -16,7 +16,7 @@ module  my_module(
 endmodule
 ~~~~~
 
-~~~~~
+~~~~~scala
 class my_module extends Module{
   val io = IO(      // making IO ports
     new Bundle{     // Port bundle: childs--> Input/Output/Analog/Bundle
@@ -30,7 +30,7 @@ class my_module extends Module{
 ~~~~~
 
 Making wrapper for Chisel3 to use existing verilog design.
-~~~~~
+~~~~~scala
 class my_module extends BlackBox{
   val io = IO(    // BlackBox will remove io in the port name
     new Bundle{
@@ -48,7 +48,7 @@ class my_module extends BlackBox{
 ## signal
 
 register
-~~~~
+~~~~scala
 val regname = Reg(UInt(1.W)) // 1bit register
 val regname = Reg(UInt(8.W)) // 8bit register
 val regname = Reg(Bool())    // boolean(=~ 1bit) register
@@ -61,7 +61,7 @@ when(enable){
 ~~~~
 
 wire
-~~~~
+~~~~scala
 val wirename = Wire(UInt(1.W)) // 1bit wire
 val wirename = Wire(UInt(8.W)) // 8bit wire
 
@@ -75,7 +75,7 @@ val wirename = othersignal  // define wirename implicitly and assign othersignal
 
 ## statements
 when statements
-~~~~
+~~~~scala
 when(condition0){
   statement when condition 0
 }.elsewhen(condition1){
@@ -87,7 +87,7 @@ when(condition0){
 }
 ~~~~
 switch-is statements
-~~~~
+~~~~scala
 switch(value){
   is(valueA){
   }
@@ -97,7 +97,7 @@ switch(value){
 }
 ~~~~
 state machine example
-~~~~
+~~~~scala
 val state_0 :: state_1 :: state_3 :: Nil = Enum(3)
 val state = RegInit(state_0)
 switch(state){
@@ -111,22 +111,36 @@ switch(state){
   }
 }
 ~~~~
+verilog case
+~~~~verilog
+casex(name)
+2'b0x : ...
+2'b10 : ...
+default : ...
+endcase
+~~~~
+is translated as below
+~~~~scala
+     when(name===BitPat("b0?")){ ... }
+.elsewhen(name===BitPat("b10")){ ... }
+.otherwise                     { ... }
+~~~~
 
 
 ## vec/seq
 data
-~~~~
+~~~~scala
 val vecname = Reg(Vec(size, UInt(8.W))) // 8bit x size data register
 val seqname = for(i <- 0 until 8) yield { Reg(UInt(32.W) } // 32bit x 8 register generation
 ~~~~
 operations
-~~~~
+~~~~scala
 val reduced = vecname.reduce(_|_)
 val wirename = vecname.asUInt
 ~~~~
 
 ## Bundle
-~~~~
+~~~~scala
 class MyBundle extends Bundle{
   val a = UInt(1.W)
   val b = UInt(3.W)
@@ -149,7 +163,7 @@ val bun_new = uint.asTypeOf(new MyBundle)
 
 ## for/foreach/map
 
-~~~~~
+~~~~~scala
 // for loop
 for(variable <- iterable)[yield]{
   // statements
