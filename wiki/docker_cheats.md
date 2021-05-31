@@ -35,6 +35,9 @@ docker kill container
 # 컨테이너 삭제
 docker rm container
 
+# 컨테이너를 이미지로 전환
+docker commit container new_image
+
 # 이미지 저장
 docker save image_id -o image_filename
 # 이미지 로딩
