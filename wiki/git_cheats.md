@@ -52,6 +52,22 @@ git> git init --bare
 > git push
 ~~~~
 
+## branch & merge with remote servers
+~~~~
+# in branch side
+> git clone SERVER
+> git checkout -b BRANCH_NAME
+# edit files
+> git commit -a
+> git push origin BRANCH_NAME   # 원격에 현재 브랜치를 push함
+
+# in merge side
+> git remote update   # branch정보까지 가져옴
+> git merge origin/BRANCH_NAME
+# if no conflict finish it
+# if conflict, edit the conflicted file and
+> git commit -a   # 수정된 파일을 
+
 ## 서버 변경하기
 ~~~~
 # 현재 서버 정보
